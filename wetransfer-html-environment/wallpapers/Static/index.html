@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+    <title>WeTransfer Wallpaper</title>
+
+    <meta name='description' content=''>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+    <link href='https://wetransferbackgrounds-eu.s3.amazonaws.com/wallpaperassets/201701/screen.css' rel='stylesheet'>
+    <style media='screen'>
+
+/*/////////////////////////////////////////////////////////////////////////////////
+CSS functions as normal, but for the best responsive results, build everything in percentages and viewport sizes.
+/////////////////////////////////////////////////////////////////////////////////*/
+
+        body{
+            cursor: pointer;
+        }
+
+        .fullscreencontainer{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .copy {
+            position: absolute;
+            height: 35%;
+            width: 40%;
+            min-height: 300px;
+            min-width: 350px;
+            max-height: 330px;
+            max-width: 500px;
+            -moz-background-size: contain;
+              -o-background-size: contain;
+                 background-size: contain;
+            background-repeat: no-repeat;
+            top: 50%;
+            left: 400px;
+            background-position: left bottom;
+            -webkit-transform: translate(0%,-50%);
+               -moz-transform: translate(0%,-50%);
+                -ms-transform: translate(0%,-50%);
+                 -o-transform: translate(0%,-50%);
+                    transform: translate(0%,-50%);
+            background-image: url(images/heading.png);
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        function onReady() {
+        }
+
+        function onBackgroundLoad() {
+            wallpaper.fadeIn();
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <we-wallpaper onready='onReady()'>
+<!--    //////////////////////////////////////////////////////////////////////////////////
+        There's multiple elements in the HTML that begin with 'we-' these can easily be targetted in the javascript by their ID's. You don't need to create additional vars nor require jquery.
+        ////////////////////////////////////////////////////////////////////////////////// -->
+
+        <we-background onload='onBackgroundLoad()' fullscreen autoload id="background">
+            <source src='images/bg.jpg' media='(min-width: 0px)' />
+        </we-background>
+
+
+
+<!--    Wallpaper elements without interaction.
+        ////////////////////////////////////////////////////////////////////////////////// -->
+        <we-container id='bottomcontainer' class='fullscreencontainer'>
+            <div id='heading' class='copy'></div>    
+        </we-container>
+
+
+<!--////////////       Everything below this element autmatically clicks       ////////////--><we-clickbutton></we-clickbutton>
+
+
+    </we-wallpaper>
+
+<!--  These resources need to be loaded for everything to work within wetransfer.
+////////////////////////////////////////////////////////////////////////////////// -->
+    <script src='https://assets.wetransfer.net/js/wallpaper-api-2.0.js' type='text/javascript'></script>
+    <script src='https://wetransferbackgrounds-eu.s3.amazonaws.com/wallpaperassets/201701/wallpaper-toolbox-0.4.0.js' type='text/javascript'></script>
+</body>
+</html>
